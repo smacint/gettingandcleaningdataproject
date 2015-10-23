@@ -13,7 +13,7 @@ setwd("C:/Users/SMacIntyre/Desktop/R/Getting and cleaning data/Course Project")
 	dl<-paste("Date of download:", date())
 	print(dl)
 	
-	unlink("run_analysis_date.txt")
+	sink()
 
 ##Read in test, training and features datasets
 	#activity variable
@@ -87,10 +87,10 @@ setwd("C:/Users/SMacIntyre/Desktop/R/Getting and cleaning data/Course Project")
 	colnames(tidy_data)[1:3]<-c("group", "subjectid", "activity")
 
 ##Write intermediate and tidy datasets
-	write.table(data, file="cleaned dataset.txt", row.name=FALSE)
+	write.table(data, file="cleaned_data.txt", row.name=FALSE)
 	write.table(tidy_data, file="tidy_data.txt", row.name=FALSE)
 
-unlink("run_analysis_date.txt")	
+
 	
 
 
